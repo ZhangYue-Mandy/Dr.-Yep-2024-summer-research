@@ -1,0 +1,22 @@
+[18:59:33][I]: Starting Goodman HTS Pipeline Log
+[18:59:33][I]: Local Time    : 2024-06-20 18:59:33.365189
+[18:59:33][I]: Universal Time: 2024-06-20 18:59:33.365285
+[18:59:33][I]: Pipeline Version: 1.3.7 (latest)
+[18:59:34][I]: Searching spectroscopic targets in file: cfzst_0075_CG22_13.fits
+[18:59:34][I]: Fitting Linear1D model to spatial profile to detect background shape
+[18:59:34][I]: Subtracting background shape and level spatial profile for better target identification
+[18:59:34][I]: Finding all peaks in spatial profile
+[18:59:34][I]: Selecting the 3 most intense peaks out of 2 found
+[18:59:34][I]: Validating peaks by setting threshold 3 times the background level 2.20
+[18:59:34][I]: Selecting peak: Centered: 168.0 Intensity 73.446
+[18:59:34][I]: Fitting 'Moffat1D' to spatial profile of targets.
+[18:59:35][I]: Recording target centered at: 167.74, FWHM: 3.99
+[18:59:35][I]: Identified 1 target
+[18:59:35][I]: Target tracing RMS error: 0.176
+[18:59:35][I]: Fractional Pixel Extraction for cfzst_0075_CG22_13.fits
+[18:59:35][I]: Extraction aperture in first column: 163.84:171.82
+[18:59:35][W]: Setting mask to None, otherwise saving will fail.
+[18:59:35][I]: Background extraction zone 1: 143.90:151.88 column 1
+[18:59:35][I]: Background extraction zone 2: 183.79:191.76 column 1
+[18:59:35][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0075_CG22_13.fits
+[18:59:35][I]: Saving FITS file to ecfzst_0075_CG22_13.fits
