@@ -1,0 +1,227 @@
+[21:11:04][I]: Starting Goodman HTS Pipeline Log
+[21:11:04][I]: Local Time    : 2024-06-20 21:11:04.031116
+[21:11:04][I]: Universal Time: 2024-06-20 21:11:04.031214
+[21:11:04][I]: Pipeline Version: 1.3.7 (latest)
+[21:11:05][W]: The target's comparison lamps do not have reference lamps.
+[21:11:05][I]: Searching spectroscopic targets in file: cfzst_0089_CG3_69.fits
+[21:11:05][I]: Fitting Linear1D model to spatial profile to detect background shape
+[21:11:05][I]: Subtracting background shape and level spatial profile for better target identification
+[21:11:05][I]: Finding all peaks in spatial profile
+[21:11:05][I]: Selecting the 3 most intense peaks out of 1 found
+[21:11:05][I]: Validating peaks by setting threshold 3 times the background level 1.92
+[21:11:05][I]: Selecting peak: Centered: 174.0 Intensity 63.954
+[21:11:05][I]: Fitting 'Moffat1D' to spatial profile of targets.
+[21:11:05][I]: Recording target centered at: 173.99, FWHM: 4.08
+[21:11:05][I]: Identified 1 target
+[21:11:06][I]: Target tracing RMS error: 0.000
+[21:11:06][I]: Fractional Pixel Extraction for cfzst_0089_CG3_69.fits
+[21:11:06][I]: Extraction aperture in first column: 169.92:178.08
+[21:11:06][W]: Setting mask to None, otherwise saving will fail.
+[21:11:06][I]: Background extraction zone 1: 149.54:157.70 column 1
+[21:11:06][I]: Background extraction zone 2: 190.30:198.46 column 1
+[21:11:06][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0089_CG3_69.fits
+[21:11:06][I]: Saving FITS file to ecfzst_0089_CG3_69.fits
+[21:11:06][I]: Fractional Pixel Extraction for cfzst_0090_CG3_69_comp.fits
+[21:11:06][I]: Extraction aperture in first column: 169.92:178.08
+[21:11:06][W]: Setting mask to None, otherwise saving will fail.
+[21:11:06][I]: Background extraction zone 1: 'none'
+[21:11:06][I]: Background extraction zone 2: 'none'
+[21:11:06][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0090_CG3_69_comp_169.92-178.08.fits
+[21:11:06][I]: Saving FITS file to ecfzst_0090_CG3_69_comp_169.92-178.08.fits
+[21:11:07][I]: Searching matching reference lamp
+[21:11:07][E]: Unable to find a match for: LAMP_HGA = FALSE, LAMP_NE = TRUE, LAMP_AR = FALSE, LAMP_FE = FALSE, LAMP_CU = FALSE, WAVMODE =  
+[21:11:07][W]: The target's comparison lamps do not have reference lamps.
+[21:11:07][I]: Searching spectroscopic targets in file: cfzst_0087_CG3_70.fits
+[21:11:07][I]: Fitting Linear1D model to spatial profile to detect background shape
+[21:11:07][I]: Subtracting background shape and level spatial profile for better target identification
+[21:11:07][I]: Finding all peaks in spatial profile
+[21:11:07][I]: Selecting the 3 most intense peaks out of 3 found
+[21:11:07][I]: Validating peaks by setting threshold 3 times the background level 1.84
+[21:11:07][I]: Selecting peak: Centered: 174.0 Intensity 61.397
+[21:11:07][I]: Selecting peak: Centered: 283.0 Intensity 9.233
+[21:11:07][I]: Selecting peak: Centered: 251.0 Intensity 7.823
+[21:11:07][I]: Fitting 'Moffat1D' to spatial profile of targets.
+[21:11:07][I]: Recording target centered at: 174.53, FWHM: 4.03
+[21:11:07][E]: Discarding target centered at: 283.000
+[21:11:07][E]: Moffat model FWHM is too small: 0.09322878900528861. Set a minimum limit with `--profile-min-width`.
+[21:11:07][E]: Discarding target centered at: 250.982
+[21:11:07][E]: Moffat model FWHM is too small: 0.11512384571480049. Set a minimum limit with `--profile-min-width`.
+[21:11:07][I]: Identified 1 target
+[21:11:08][I]: Target tracing RMS error: 0.352
+[21:11:08][I]: Fractional Pixel Extraction for cfzst_0087_CG3_70.fits
+[21:11:08][I]: Extraction aperture in first column: 171.10:179.15
+[21:11:08][W]: Setting mask to None, otherwise saving will fail.
+[21:11:08][I]: Background extraction zone 1: 150.96:159.02 column 1
+[21:11:08][I]: Background extraction zone 2: 191.23:199.29 column 1
+[21:11:08][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0087_CG3_70.fits
+[21:11:08][I]: Saving FITS file to ecfzst_0087_CG3_70.fits
+[21:11:08][I]: Fractional Pixel Extraction for cfzst_0088_CG3_70_comp.fits
+[21:11:08][I]: Extraction aperture in first column: 171.10:179.15
+[21:11:08][W]: Setting mask to None, otherwise saving will fail.
+[21:11:08][I]: Background extraction zone 1: 'none'
+[21:11:08][I]: Background extraction zone 2: 'none'
+[21:11:08][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0088_CG3_70_comp_171.10-179.15.fits
+[21:11:08][I]: Saving FITS file to ecfzst_0088_CG3_70_comp_171.10-179.15.fits
+[21:11:09][I]: Searching matching reference lamp
+[21:11:09][E]: Unable to find a match for: LAMP_HGA = FALSE, LAMP_NE = TRUE, LAMP_AR = FALSE, LAMP_FE = FALSE, LAMP_CU = FALSE, WAVMODE =  
+[21:11:09][W]: The target's comparison lamps do not have reference lamps.
+[21:11:10][I]: Searching spectroscopic targets in file: cfzst_0085_CG14_15.fits
+[21:11:10][I]: Fitting Linear1D model to spatial profile to detect background shape
+[21:11:10][I]: Subtracting background shape and level spatial profile for better target identification
+[21:11:10][I]: Finding all peaks in spatial profile
+[21:11:10][I]: Selecting the 3 most intense peaks out of 1 found
+[21:11:10][I]: Validating peaks by setting threshold 3 times the background level 1.74
+[21:11:10][I]: Selecting peak: Centered: 174.0 Intensity 58.153
+[21:11:10][I]: Fitting 'Moffat1D' to spatial profile of targets.
+[21:11:10][I]: Recording target centered at: 174.19, FWHM: 4.00
+[21:11:10][I]: Identified 1 target
+[21:11:10][I]: Target tracing RMS error: 0.000
+[21:11:10][I]: Fractional Pixel Extraction for cfzst_0085_CG14_15.fits
+[21:11:10][I]: Extraction aperture in first column: 170.00:178.00
+[21:11:10][W]: Setting mask to None, otherwise saving will fail.
+[21:11:10][I]: Background extraction zone 1: 150.01:158.01 column 1
+[21:11:10][I]: Background extraction zone 2: 189.99:197.99 column 1
+[21:11:10][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0085_CG14_15.fits
+[21:11:10][I]: Saving FITS file to ecfzst_0085_CG14_15.fits
+[21:11:10][I]: Fractional Pixel Extraction for cfzst_0086_CG14_15_comp.fits
+[21:11:10][I]: Extraction aperture in first column: 170.00:178.00
+[21:11:10][W]: Setting mask to None, otherwise saving will fail.
+[21:11:10][I]: Background extraction zone 1: 'none'
+[21:11:10][I]: Background extraction zone 2: 'none'
+[21:11:10][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0086_CG14_15_comp_170.00-178.00.fits
+[21:11:10][I]: Saving FITS file to ecfzst_0086_CG14_15_comp_170.00-178.00.fits
+[21:11:12][I]: Searching matching reference lamp
+[21:11:12][E]: Unable to find a match for: LAMP_HGA = FALSE, LAMP_NE = TRUE, LAMP_AR = FALSE, LAMP_FE = FALSE, LAMP_CU = FALSE, WAVMODE =  
+[21:11:12][W]: The target's comparison lamps do not have reference lamps.
+[21:11:12][I]: Searching spectroscopic targets in file: cfzst_0091_CG22_14.fits
+[21:11:12][I]: Fitting Linear1D model to spatial profile to detect background shape
+[21:11:12][I]: Subtracting background shape and level spatial profile for better target identification
+[21:11:12][I]: Finding all peaks in spatial profile
+[21:11:12][I]: Selecting the 3 most intense peaks out of 2 found
+[21:11:12][I]: Validating peaks by setting threshold 3 times the background level 2.01
+[21:11:12][I]: Selecting peak: Centered: 175.0 Intensity 66.846
+[21:11:12][I]: Selecting peak: Centered: 298.0 Intensity 6.502
+[21:11:12][I]: Fitting 'Moffat1D' to spatial profile of targets.
+[21:11:12][I]: Recording target centered at: 174.84, FWHM: 3.26
+[21:11:12][E]: Discarding target centered at: 298.000
+[21:11:12][E]: Moffat model FWHM is too small: 0.32077610999629563. Set a minimum limit with `--profile-min-width`.
+[21:11:12][I]: Identified 1 target
+[21:11:12][I]: Target tracing RMS error: 0.000
+[21:11:12][I]: Fractional Pixel Extraction for cfzst_0091_CG22_14.fits
+[21:11:12][I]: Extraction aperture in first column: 171.74:178.26
+[21:11:12][W]: Setting mask to None, otherwise saving will fail.
+[21:11:12][I]: Background extraction zone 1: 155.44:161.96 column 1
+[21:11:12][I]: Background extraction zone 2: 188.04:194.56 column 1
+[21:11:12][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0091_CG22_14.fits
+[21:11:12][I]: Saving FITS file to ecfzst_0091_CG22_14.fits
+[21:11:12][I]: Fractional Pixel Extraction for cfzst_0092_CG22_14_comp.fits
+[21:11:12][I]: Extraction aperture in first column: 171.74:178.26
+[21:11:12][W]: Setting mask to None, otherwise saving will fail.
+[21:11:12][I]: Background extraction zone 1: 'none'
+[21:11:12][I]: Background extraction zone 2: 'none'
+[21:11:12][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0092_CG22_14_comp_171.74-178.26.fits
+[21:11:12][I]: Saving FITS file to ecfzst_0092_CG22_14_comp_171.74-178.26.fits
+[21:11:14][I]: Searching matching reference lamp
+[21:11:14][E]: Unable to find a match for: LAMP_HGA = FALSE, LAMP_NE = TRUE, LAMP_AR = FALSE, LAMP_FE = FALSE, LAMP_CU = FALSE, WAVMODE =  
+[21:11:14][W]: The target's comparison lamps do not have reference lamps.
+[21:11:14][I]: Searching spectroscopic targets in file: cfzst_0095_CG22_17.fits
+[21:11:14][I]: Fitting Linear1D model to spatial profile to detect background shape
+[21:11:14][I]: Subtracting background shape and level spatial profile for better target identification
+[21:11:14][I]: Finding all peaks in spatial profile
+[21:11:14][I]: Selecting the 3 most intense peaks out of 2 found
+[21:11:14][I]: Validating peaks by setting threshold 3 times the background level 3.35
+[21:11:14][I]: Selecting peak: Centered: 175.0 Intensity 111.686
+[21:11:14][I]: Fitting 'Moffat1D' to spatial profile of targets.
+[21:11:14][I]: Recording target centered at: 174.86, FWHM: 3.11
+[21:11:14][I]: Identified 1 target
+[21:11:14][I]: Target tracing RMS error: 0.000
+[21:11:14][I]: Fractional Pixel Extraction for cfzst_0095_CG22_17.fits
+[21:11:14][I]: Extraction aperture in first column: 171.89:178.11
+[21:11:14][W]: Setting mask to None, otherwise saving will fail.
+[21:11:14][I]: Background extraction zone 1: 156.32:162.55 column 1
+[21:11:14][I]: Background extraction zone 2: 187.45:193.68 column 1
+[21:11:14][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0095_CG22_17.fits
+[21:11:14][I]: Saving FITS file to ecfzst_0095_CG22_17.fits
+[21:11:14][I]: Fractional Pixel Extraction for cfzst_0096_CG22_17_comp.fits
+[21:11:14][I]: Extraction aperture in first column: 171.89:178.11
+[21:11:14][W]: Setting mask to None, otherwise saving will fail.
+[21:11:14][I]: Background extraction zone 1: 'none'
+[21:11:14][I]: Background extraction zone 2: 'none'
+[21:11:14][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0096_CG22_17_comp_171.89-178.11.fits
+[21:11:14][I]: Saving FITS file to ecfzst_0096_CG22_17_comp_171.89-178.11.fits
+[21:11:16][I]: Searching matching reference lamp
+[21:11:16][E]: Unable to find a match for: LAMP_HGA = FALSE, LAMP_NE = TRUE, LAMP_AR = FALSE, LAMP_FE = FALSE, LAMP_CU = FALSE, WAVMODE =  
+[21:11:16][W]: The target's comparison lamps do not have reference lamps.
+[21:11:16][I]: Searching spectroscopic targets in file: cfzst_0097_CG22_18.fits
+[21:11:16][I]: Fitting Linear1D model to spatial profile to detect background shape
+[21:11:16][I]: Subtracting background shape and level spatial profile for better target identification
+[21:11:16][I]: Finding all peaks in spatial profile
+[21:11:16][I]: Selecting the 3 most intense peaks out of 30 found
+[21:11:16][I]: Validating peaks by setting threshold 3 times the background level 1.99
+[21:11:16][I]: Selecting peak: Centered: 176.0 Intensity 66.208
+[21:11:16][I]: Selecting peak: Centered: 163.0 Intensity 18.540
+[21:11:16][I]: Selecting peak: Centered: 116.0 Intensity 15.406
+[21:11:16][I]: Fitting 'Moffat1D' to spatial profile of targets.
+[21:11:16][E]: Discarding target centered at: 175.504
+[21:11:16][E]: Moffat model FWHM is too small: 0.04135821563914663. Set a minimum limit with `--profile-min-width`.
+[21:11:16][E]: Discarding target centered at: 175.504
+[21:11:16][E]: Moffat model FWHM is too small: 0.09441295498703849. Set a minimum limit with `--profile-min-width`.
+[21:11:16][E]: Discarding target centered at: 175.504
+[21:11:16][E]: Moffat model FWHM is too small: 0.06441749758347969. Set a minimum limit with `--profile-min-width`.
+[21:11:16][E]: Impossible to identify targets.
+[21:11:16][W]: The target's comparison lamps do not have reference lamps.
+[21:11:16][I]: Searching spectroscopic targets in file: cfzst_0093_CG22_20.fits
+[21:11:16][I]: Fitting Linear1D model to spatial profile to detect background shape
+[21:11:16][I]: Subtracting background shape and level spatial profile for better target identification
+[21:11:16][I]: Finding all peaks in spatial profile
+[21:11:16][I]: Selecting the 3 most intense peaks out of 1 found
+[21:11:16][I]: Validating peaks by setting threshold 3 times the background level 2.27
+[21:11:16][I]: Selecting peak: Centered: 175.0 Intensity 75.779
+[21:11:16][I]: Fitting 'Moffat1D' to spatial profile of targets.
+[21:11:16][I]: Recording target centered at: 175.36, FWHM: 3.50
+[21:11:16][I]: Identified 1 target
+[21:11:16][I]: Target tracing RMS error: 0.100
+[21:11:16][I]: Fractional Pixel Extraction for cfzst_0093_CG22_20.fits
+[21:11:16][I]: Extraction aperture in first column: 172.19:179.20
+[21:11:17][W]: Setting mask to None, otherwise saving will fail.
+[21:11:17][I]: Background extraction zone 1: 154.67:161.68 column 1
+[21:11:17][I]: Background extraction zone 2: 189.70:196.71 column 1
+[21:11:17][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0093_CG22_20.fits
+[21:11:17][I]: Saving FITS file to ecfzst_0093_CG22_20.fits
+[21:11:17][I]: Fractional Pixel Extraction for cfzst_0094_CG22_20_comp.fits
+[21:11:17][I]: Extraction aperture in first column: 172.19:179.20
+[21:11:17][W]: Setting mask to None, otherwise saving will fail.
+[21:11:17][I]: Background extraction zone 1: 'none'
+[21:11:17][I]: Background extraction zone 2: 'none'
+[21:11:17][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0094_CG22_20_comp_172.19-179.20.fits
+[21:11:17][I]: Saving FITS file to ecfzst_0094_CG22_20_comp_172.19-179.20.fits
+[21:11:18][I]: Searching matching reference lamp
+[21:11:18][E]: Unable to find a match for: LAMP_HGA = FALSE, LAMP_NE = TRUE, LAMP_AR = FALSE, LAMP_FE = FALSE, LAMP_CU = FALSE, WAVMODE =  
+[21:11:18][W]: The target's comparison lamps do not have reference lamps.
+[21:11:18][I]: Searching spectroscopic targets in file: cfzst_0099_CG22_21.fits
+[21:11:18][I]: Fitting Linear1D model to spatial profile to detect background shape
+[21:11:18][I]: Subtracting background shape and level spatial profile for better target identification
+[21:11:18][I]: Finding all peaks in spatial profile
+[21:11:18][I]: Selecting the 3 most intense peaks out of 3 found
+[21:11:18][I]: Validating peaks by setting threshold 3 times the background level 4.20
+[21:11:18][I]: Selecting peak: Centered: 176.0 Intensity 139.875
+[21:11:18][I]: Fitting 'Moffat1D' to spatial profile of targets.
+[21:11:18][I]: Recording target centered at: 176.08, FWHM: 3.03
+[21:11:18][I]: Identified 1 target
+[21:11:18][I]: Target tracing RMS error: 0.000
+[21:11:18][I]: Fractional Pixel Extraction for cfzst_0099_CG22_21.fits
+[21:11:18][I]: Extraction aperture in first column: 172.97:179.03
+[21:11:19][W]: Setting mask to None, otherwise saving will fail.
+[21:11:19][I]: Background extraction zone 1: 157.83:163.89 column 1
+[21:11:19][I]: Background extraction zone 2: 188.11:194.17 column 1
+[21:11:19][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0099_CG22_21.fits
+[21:11:19][I]: Saving FITS file to ecfzst_0099_CG22_21.fits
+[21:11:19][I]: Fractional Pixel Extraction for cfzst_0100_CG22_21_comp.fits
+[21:11:19][I]: Extraction aperture in first column: 172.97:179.03
+[21:11:19][W]: Setting mask to None, otherwise saving will fail.
+[21:11:19][I]: Background extraction zone 1: 'none'
+[21:11:19][I]: Background extraction zone 2: 'none'
+[21:11:19][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0100_CG22_21_comp_172.97-179.03.fits
+[21:11:19][I]: Saving FITS file to ecfzst_0100_CG22_21_comp_172.97-179.03.fits
+[21:11:20][I]: Searching matching reference lamp
+[21:11:20][E]: Unable to find a match for: LAMP_HGA = FALSE, LAMP_NE = TRUE, LAMP_AR = FALSE, LAMP_FE = FALSE, LAMP_CU = FALSE, WAVMODE =  
