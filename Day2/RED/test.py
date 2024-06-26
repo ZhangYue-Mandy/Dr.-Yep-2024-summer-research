@@ -21,11 +21,13 @@ from scipy.optimize import curve_fit
 
 import os
 import shutil
-filename=''
-identity=''
 
 def extract_filename(file_path):
     return file_path[file_path.rfind('\\') + 1:]
+
+def extract_target(filename):
+    if filename.startswith('ecfzst') and filename.endswith('.fits'):
+        return filename[filename.find('_',2):-len('.fits')]
 #wavelength, flux
 def wf(dat): #whichord,dat. Setup:   w,f=wf(#,dat)
     w=np.array([d[0] for d in dat])
@@ -39,8 +41,12 @@ def writefits(starfile):
     head=hdu[0].header
     hdu[0].data=[w,fstar] #wavelength, flux!
     hdu[0].header['COMPFILE']=extract_filename(lampfile) #record which comparison file was used
-    hdu.writeto(source_folder+'\\wfun\\wfun_'+starname+'.fits',overwrite=True)
-    hdu.close()
+    if 'target' in filename:
+        hdu.writeto(source_folder+'\\wfun\\wfun_'+starname+'_target.fits',overwrite=True)
+        hdu.close()
+    else:
+        hdu.writeto(source_folder+'\\wfun\\wfun_'+starname+'.fits',overwrite=True)
+        hdu.close()
 
 #Ultimate opendat:
 def opendatt(dir,filename,spl=''): #dir,'filename'. For opening a data file. Can then send through roundtable.
@@ -298,7 +304,7 @@ def process(starfile,lampfile):
 
     #comparison lamp
     flamp,head=efits(lampfile)
-    filename=head['Object']
+    filename=extract_target(extract_filename(starfile))
     identity=head['GSP_FNAM']
 
 
@@ -328,31 +334,34 @@ def process(starfile,lampfile):
 
 #get our currently working folder
 source_folder = os.getcwd()
-print(source_folder)
+
 #create a folder call wfun
 wfun_path = os.path.join(source_folder, 'wfun')
 wfun_check_path = os.path.join(source_folder, 'wfun_check')
 mkdir(wfun_path)
 mkdir(wfun_check_path)
 
-# starfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\ecfzst_0060_CG30_6.fits'
-# lampfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\ecfzst_0061_CG30_6_comp_167.23-176.39.fits'
+starfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\ecfzst_0060_CG30_6.fits'
+lampfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\ecfzst_0061_CG30_6_comp_167.23-176.39.fits'
+print(starfile)
+print(extract_filename(starfile))
+print(extract_target(extract_filename(starfile)))
 # process(starfile,lampfile)
 # print(starname)
 
 
-starfiles,lampfiles=scan_file(source_folder)
-write_io(source_folder+'\\wfun_check',f'scanning the directory{source_folder}'+'\r')
-for i in range(len(starfiles)):
-    write_io(source_folder+'\\wfun_check',f'{extract_filename(starfiles[i])}:{extract_filename(lampfiles[i])}'+'\r')
+# starfiles,lampfiles=scan_file(source_folder)
+# write_io(source_folder+'\\wfun_check',f'scanning the directory{source_folder}'+'\r')
+# for i in range(len(starfiles)):
+#     write_io(source_folder+'\\wfun_check',f'{extract_target(extract_filename(starfiles[i]))}:{extract_target(extract_filename(lampfiles[i]))}'+'\r')
 
 
 
 
-for starfile,lampfile in zip(starfiles,lampfiles):
-    try:
-        process(starfile, lampfile)
-    except:
-        write_io(source_folder+'\\wfun_check',f'cannot process {identity}'+'\r')
-        print(f'cannot process {identity}')
+# for starfile,lampfile in zip(starfiles,lampfiles):
+#     try:
+#         process(starfile, lampfile)
+#     except:
+#         write_io(source_folder+'\\wfun_check',f'cannot process {identity}'+'\r')
+#         print(f'cannot process {identity}')
 

@@ -23,8 +23,10 @@ from bokeh.plotting import figure
 from bokeh.layouts import gridplot
 output_notebook()
 
+def extract_filename(file_path):
+    return file_path[file_path.rfind('\\') + 1:]
 
-def extract_filename(filename):
+def extract_target(filename):
     if filename.startswith('wfun_') and filename.endswith('.fits'):
         return filename[len('wfun_'):-len('.fits')]
 
@@ -204,7 +206,7 @@ def process(file):
     global starname
     #file=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\wfun\wfun_CG4_2.fits'
     w,f=openfits(file)
-    starname=extract_filename(file)
+    starname=extract_target(file)
     #Take a look.
     plt.figure()
     plt.plot(w,f)
