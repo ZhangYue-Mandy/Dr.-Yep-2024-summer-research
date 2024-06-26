@@ -7,6 +7,7 @@ count = ''
 fstar = ''
 image_paths = []
 output_path = ''
+starname=''
 import numpy as np
 import astropy.io.fits as fits
 import glob
@@ -20,15 +21,26 @@ from scipy.optimize import curve_fit
 
 import os
 import shutil
-
-
 filename=''
 identity=''
+
+def extract_filename(file_path):
+    return file_path[file_path.rfind('\\') + 1:]
 #wavelength, flux
 def wf(dat): #whichord,dat. Setup:   w,f=wf(#,dat)
     w=np.array([d[0] for d in dat])
     f=np.array([d[1] for d in dat])
     return w,f
+
+
+def writefits(starfile):
+    hdu=fits.open(starfile)
+    data=hdu[0].data
+    head=hdu[0].header
+    hdu[0].data=[w,fstar] #wavelength, flux!
+    hdu[0].header['COMPFILE']=extract_filename(lampfile) #record which comparison file was used
+    hdu.writeto(source_folder+'\\wfun\\wfun_'+starname+'.fits',overwrite=True)
+    hdu.close()
 
 #Ultimate opendat:
 def opendatt(dir,filename,spl=''): #dir,'filename'. For opening a data file. Can then send through roundtable.
@@ -279,9 +291,10 @@ def combine_images_grid(image_paths, output_path, grid_size):
     combined_image.save(output_path)
 
 def process(starfile,lampfile):
-    global filename,identity,w,count,fstar,image_paths,output_path
+    global filename,identity,w,count,fstar,image_paths,output_path,starname
     #star
-    fstar,head=efits(starfile)
+    fstar,header=efits(starfile)
+    starname=header['Object']
 
     #comparison lamp
     flamp,head=efits(lampfile)
@@ -293,7 +306,8 @@ def process(starfile,lampfile):
 
     #Run wavelength calibration on comparison lamp file.
     w,count=wcal(flamp)
-    writedat(source_folder+'\\wfun\\','wfun_'+identity,[w,fstar],['#w','f'])
+    #writedat(source_folder+'\\wfun\\','wfun_'+starname,[w,fstar],['#w','f'])
+    writefits(starfile)
     plotspec(w,fstar)
 
     # Paths to the images to combine
@@ -305,6 +319,8 @@ def process(starfile,lampfile):
 
     # Combine images in a designed grid
     combine_images_grid(image_paths, output_path, (count//4,6))
+
+    #delete the pictures
     delfile=scan_picture(source_folder+'\\wfun_check', extension=".png")
     for i in delfile:
         os.remove(i)
@@ -319,8 +335,12 @@ wfun_check_path = os.path.join(source_folder, 'wfun_check')
 mkdir(wfun_path)
 mkdir(wfun_check_path)
 
-def extract_filename(file_path):
-    return file_path[file_path.rfind('\\') + 1:]
+# starfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\ecfzst_0060_CG30_6.fits'
+# lampfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\ecfzst_0061_CG30_6_comp_167.23-176.39.fits'
+# process(starfile,lampfile)
+# print(starname)
+
+
 starfiles,lampfiles=scan_file(source_folder)
 write_io(source_folder+'\\wfun_check',f'scanning the directory{source_folder}'+'\r')
 for i in range(len(starfiles)):
