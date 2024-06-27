@@ -1,0 +1,60 @@
+[20:47:55][I]: Starting Goodman HTS Pipeline Log
+[20:47:55][I]: Local Time    : 2024-06-27 20:47:55.419637
+[20:47:55][I]: Universal Time: 2024-06-27 20:47:55.419740
+[20:47:55][I]: Pipeline Version: 1.3.7 (latest)
+[20:47:56][W]: The target's comparison lamps do not have reference lamps.
+[20:47:57][I]: Searching spectroscopic targets in file: cfzst_0079_CG14_6.fits
+[20:47:57][I]: Fitting Linear1D model to spatial profile to detect background shape
+[20:47:57][I]: Subtracting background shape and level spatial profile for better target identification
+[20:47:57][I]: Finding all peaks in spatial profile
+[20:47:57][I]: Selecting the 3 most intense peaks out of 3 found
+[20:47:57][I]: Validating peaks by setting threshold 3 times the background level 1.54
+[20:47:57][I]: Selecting peak: Centered: 191.0 Intensity 51.399
+[20:47:57][I]: Fitting 'Moffat1D' to spatial profile of targets.
+[20:47:57][I]: Recording target centered at: 190.45, FWHM: 4.86
+[20:47:57][I]: Identified 1 target
+[20:47:57][I]: Target tracing RMS error: 0.314
+[20:47:57][I]: Fractional Pixel Extraction for cfzst_0079_CG14_6.fits
+[20:47:57][I]: Extraction aperture in first column: 186.12:195.83
+[20:47:57][W]: Setting mask to None, otherwise saving will fail.
+[20:47:57][I]: Background extraction zone 1: 161.83:171.55 column 1
+[20:47:57][I]: Background extraction zone 2: 210.40:220.11 column 1
+[20:47:57][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0079_CG14_6.fits
+[20:47:57][I]: Saving FITS file to ecfzst_0079_CG14_6.fits
+[20:47:57][I]: Fractional Pixel Extraction for cfzst_0080_CG14_6_comp.fits
+[20:47:57][I]: Extraction aperture in first column: 186.12:195.83
+[20:47:57][W]: Setting mask to None, otherwise saving will fail.
+[20:47:57][I]: Background extraction zone 1: 'none'
+[20:47:57][I]: Background extraction zone 2: 'none'
+[20:47:57][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0080_CG14_6_comp_186.12-195.83.fits
+[20:47:57][I]: Saving FITS file to ecfzst_0080_CG14_6_comp_186.12-195.83.fits
+[20:47:59][I]: Searching matching reference lamp
+[20:47:59][E]: Unable to find a match for: LAMP_HGA = FALSE, LAMP_NE = TRUE, LAMP_AR = FALSE, LAMP_FE = FALSE, LAMP_CU = FALSE, WAVMODE =  
+[20:47:59][W]: The target's comparison lamps do not have reference lamps.
+[20:47:59][I]: Searching spectroscopic targets in file: cfzst_0075_CG22_13.fits
+[20:47:59][I]: Fitting Linear1D model to spatial profile to detect background shape
+[20:47:59][I]: Subtracting background shape and level spatial profile for better target identification
+[20:47:59][I]: Finding all peaks in spatial profile
+[20:47:59][I]: Selecting the 3 most intense peaks out of 1 found
+[20:47:59][I]: Validating peaks by setting threshold 3 times the background level 3.29
+[20:47:59][I]: Selecting peak: Centered: 178.0 Intensity 109.555
+[20:47:59][I]: Fitting 'Moffat1D' to spatial profile of targets.
+[20:47:59][I]: Recording target centered at: 177.54, FWHM: 3.96
+[20:47:59][I]: Identified 1 target
+[20:47:59][I]: Target tracing RMS error: 0.158
+[20:47:59][I]: Fractional Pixel Extraction for cfzst_0075_CG22_13.fits
+[20:47:59][I]: Extraction aperture in first column: 173.98:181.90
+[20:47:59][W]: Setting mask to None, otherwise saving will fail.
+[20:47:59][I]: Background extraction zone 1: 154.17:162.09 column 1
+[20:47:59][I]: Background extraction zone 2: 193.79:201.71 column 1
+[20:47:59][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0075_CG22_13.fits
+[20:47:59][I]: Saving FITS file to ecfzst_0075_CG22_13.fits
+[20:47:59][I]: Fractional Pixel Extraction for cfzst_0076_CG22_13_comp.fits
+[20:47:59][I]: Extraction aperture in first column: 173.98:181.90
+[20:47:59][W]: Setting mask to None, otherwise saving will fail.
+[20:47:59][I]: Background extraction zone 1: 'none'
+[20:47:59][I]: Background extraction zone 2: 'none'
+[20:47:59][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0076_CG22_13_comp_173.98-181.90.fits
+[20:47:59][I]: Saving FITS file to ecfzst_0076_CG22_13_comp_173.98-181.90.fits
+[20:48:01][I]: Searching matching reference lamp
+[20:48:01][E]: Unable to find a match for: LAMP_HGA = FALSE, LAMP_NE = TRUE, LAMP_AR = FALSE, LAMP_FE = FALSE, LAMP_CU = FALSE, WAVMODE =  
