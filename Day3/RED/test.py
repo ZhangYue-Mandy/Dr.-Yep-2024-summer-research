@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import astropy
 from astropy import modeling
 from scipy.signal import argrelextrema
-from scipy import asarray as ar, exp, sqrt
+from numpy import asarray as ar, exp, sqrt
 from scipy.optimize import curve_fit
 
 
@@ -383,9 +383,12 @@ for star in starfiles:
     if len(matched_lamps) > 1:
         for idx, lamp in enumerate(matched_lamps):
             comp_suffix = f"_C{idx + 1}"
-            matched_starlist.append(star + comp_suffix)
+            new_star = star.replace('.fits','') + comp_suffix+'.fits'
+            matched_starlist.append(new_star)
+            shutil.copy(star,new_star)
             lamp_with_suffix = lamp.replace("_comp", f"_comp{idx + 1}")
             matched_lamplist.append(lamp_with_suffix)
+            os.rename(lamp, lamp_with_suffix)
     else:
         matched_starlist.append(star)
         if matched_lamps:
@@ -401,9 +404,10 @@ for star in starfiles:
 
 
 for starfile,lampfile in zip(matched_starlist,matched_lamplist):
-    try:
+    # try:
+        print(extract_filename(starfile)+':'+extract_filename(lampfile))
         process(starfile, lampfile)
-    except:
-        write_io(source_folder+'\\wfun_check',f'cannot process {identity}'+'\r')
-        print(f'cannot process {identity}')
+    # except:
+    #     write_io(source_folder+'\\wfun_check',f'cannot process {identity}'+'\r')
+    #     print(f'cannot process {identity}')
 
