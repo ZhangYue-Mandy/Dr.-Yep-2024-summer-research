@@ -246,3 +246,347 @@
 [14:48:46][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
 [14:48:46][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0048_HD217357_comp.fits
 [14:48:46][I]: Saving FITS file to cfzst_0048_HD217357_comp.fits
+[20:37:39][I]: Starting Goodman HTS Pipeline Log
+[20:37:39][I]: Local Time    : 2024-06-27 20:37:39.798413
+[20:37:39][I]: Universal Time: 2024-06-27 20:37:39.798512
+[20:37:39][I]: Pipeline Version: 1.3.7 (latest)
+[20:37:53][W]: Determining trim section. Assuming you have only one kind of data in this folder
+[20:37:53][I]: Trim Section: [51:4110,2:400]
+[20:37:53][I]: Overscan regions has been tested for ROI Spectroscopic 1x1, 2x2 and 3x3
+[20:37:53][I]: Overscan Region: [6:49,1:400]
+[20:37:53][I]: Creating master bias
+[20:37:54][I]: Combining 21 images to create master bias
+[20:38:03][I]: Saving FITS file to master_bias_RED_SP_1x2_R03.89_G01.48.fits
+[20:38:03][I]: Created master bias: master_bias_RED_SP_1x2_R03.89_G01.48.fits
+[20:38:03][W]: Determining trim section. Assuming you have only one kind of data in this folder
+[20:38:03][I]: Trim Section: [51:4110,2:400]
+[20:38:03][I]: Overscan regions has been tested for ROI Spectroscopic 1x1, 2x2 and 3x3
+[20:38:03][I]: Overscan Region: [6:49,1:400]
+[20:38:03][I]: Creating Master Flat
+[20:38:04][I]: Combining 12 images to create master flat
+[20:38:09][I]: Saving FITS file to master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:09][I]: Created Master Flat: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:09][W]: Determining trim section. Assuming you have only one kind of data in this folder
+[20:38:09][I]: Trim Section: [51:4110,2:400]
+[20:38:09][I]: Overscan regions has been tested for ROI Spectroscopic 1x1, 2x2 and 3x3
+[20:38:09][I]: Overscan Region: [6:49,1:400]
+[20:38:10][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:10][I]: Setting cosmic ray rejection method to: dcr
+[20:38:10][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:10][I]: Saving FITS file to fzst_0051_CG14_1.fits
+[20:38:10][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0051_CG14_1.fits
+[20:38:10][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:10][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0051_CG14_1.fits
+[20:38:10][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0051_CG14_1.fits
+[20:38:10][I]: Setting cosmic ray rejection method to: dcr
+[20:38:10][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:10][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0052_CG14_1_comp.fits
+[20:38:10][I]: Saving FITS file to cfzst_0052_CG14_1_comp.fits
+[20:38:11][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:11][I]: Setting cosmic ray rejection method to: dcr
+[20:38:11][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:11][I]: Saving FITS file to fzst_0053_CG14_2.fits
+[20:38:11][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0053_CG14_2.fits
+[20:38:11][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:12][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0053_CG14_2.fits
+[20:38:12][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0053_CG14_2.fits
+[20:38:12][I]: Setting cosmic ray rejection method to: dcr
+[20:38:12][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:12][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0054_CG14_2_comp.fits
+[20:38:12][I]: Saving FITS file to cfzst_0054_CG14_2_comp.fits
+[20:38:12][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:13][I]: Setting cosmic ray rejection method to: dcr
+[20:38:13][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:13][I]: Saving FITS file to fzst_0077_CG14_5.fits
+[20:38:13][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0077_CG14_5.fits
+[20:38:13][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:13][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0077_CG14_5.fits
+[20:38:13][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0077_CG14_5.fits
+[20:38:13][I]: Setting cosmic ray rejection method to: dcr
+[20:38:13][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:13][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0078_CG14_5_comp.fits
+[20:38:13][I]: Saving FITS file to cfzst_0078_CG14_5_comp.fits
+[20:38:14][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:14][I]: Setting cosmic ray rejection method to: dcr
+[20:38:14][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:14][I]: Saving FITS file to fzst_0055_CG14_4.fits
+[20:38:14][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0055_CG14_4.fits
+[20:38:14][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:14][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0055_CG14_4.fits
+[20:38:14][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0055_CG14_4.fits
+[20:38:15][I]: Setting cosmic ray rejection method to: dcr
+[20:38:15][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:15][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0056_CG14_4_comp.fits
+[20:38:15][I]: Saving FITS file to cfzst_0056_CG14_4_comp.fits
+[20:38:15][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:15][I]: Setting cosmic ray rejection method to: dcr
+[20:38:15][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:15][I]: Saving FITS file to fzst_0079_CG14_6.fits
+[20:38:15][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0079_CG14_6.fits
+[20:38:15][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:16][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0079_CG14_6.fits
+[20:38:16][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0079_CG14_6.fits
+[20:38:16][I]: Setting cosmic ray rejection method to: dcr
+[20:38:16][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:16][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0080_CG14_6_comp.fits
+[20:38:16][I]: Saving FITS file to cfzst_0080_CG14_6_comp.fits
+[20:38:17][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:17][I]: Setting cosmic ray rejection method to: dcr
+[20:38:17][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:17][I]: Saving FITS file to fzst_0089_CG3_69.fits
+[20:38:17][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0089_CG3_69.fits
+[20:38:17][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:17][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0089_CG3_69.fits
+[20:38:17][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0089_CG3_69.fits
+[20:38:17][I]: Setting cosmic ray rejection method to: dcr
+[20:38:17][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:17][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0090_CG3_69_comp.fits
+[20:38:17][I]: Saving FITS file to cfzst_0090_CG3_69_comp.fits
+[20:38:18][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:18][I]: Setting cosmic ray rejection method to: dcr
+[20:38:18][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:18][I]: Saving FITS file to fzst_0087_CG3_70.fits
+[20:38:18][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0087_CG3_70.fits
+[20:38:18][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:18][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0087_CG3_70.fits
+[20:38:18][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0087_CG3_70.fits
+[20:38:19][I]: Setting cosmic ray rejection method to: dcr
+[20:38:19][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:19][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0088_CG3_70_comp.fits
+[20:38:19][I]: Saving FITS file to cfzst_0088_CG3_70_comp.fits
+[20:38:19][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:20][I]: Setting cosmic ray rejection method to: dcr
+[20:38:20][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:20][I]: Saving FITS file to fzst_0081_CG14_7.fits
+[20:38:20][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0081_CG14_7.fits
+[20:38:20][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:20][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0081_CG14_7.fits
+[20:38:20][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0081_CG14_7.fits
+[20:38:20][I]: Setting cosmic ray rejection method to: dcr
+[20:38:20][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:20][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0082_CG14_7_comp.fits
+[20:38:20][I]: Saving FITS file to cfzst_0082_CG14_7_comp.fits
+[20:38:21][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:21][I]: Setting cosmic ray rejection method to: dcr
+[20:38:21][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:21][I]: Saving FITS file to fzst_0083_CG14_8.fits
+[20:38:21][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0083_CG14_8.fits
+[20:38:21][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:21][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0083_CG14_8.fits
+[20:38:21][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0083_CG14_8.fits
+[20:38:22][I]: Setting cosmic ray rejection method to: dcr
+[20:38:22][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:22][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0084_CG14_8_comp.fits
+[20:38:22][I]: Saving FITS file to cfzst_0084_CG14_8_comp.fits
+[20:38:22][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:22][I]: Setting cosmic ray rejection method to: dcr
+[20:38:22][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:22][I]: Saving FITS file to fzst_0085_CG14_15.fits
+[20:38:22][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0085_CG14_15.fits
+[20:38:22][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:23][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0085_CG14_15.fits
+[20:38:23][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0085_CG14_15.fits
+[20:38:23][I]: Setting cosmic ray rejection method to: dcr
+[20:38:23][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:23][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0086_CG14_15_comp.fits
+[20:38:23][I]: Saving FITS file to cfzst_0086_CG14_15_comp.fits
+[20:38:23][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:24][I]: Setting cosmic ray rejection method to: dcr
+[20:38:24][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:24][I]: Saving FITS file to fzst_0060_CG22_1.fits
+[20:38:24][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0060_CG22_1.fits
+[20:38:24][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:24][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0060_CG22_1.fits
+[20:38:24][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0060_CG22_1.fits
+[20:38:24][I]: Setting cosmic ray rejection method to: dcr
+[20:38:24][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:24][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0061_CG22_1_comp.fits
+[20:38:24][I]: Saving FITS file to cfzst_0061_CG22_1_comp.fits
+[20:38:25][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:25][I]: Setting cosmic ray rejection method to: dcr
+[20:38:25][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:25][I]: Saving FITS file to fzst_0062_CG22_6.fits
+[20:38:25][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0062_CG22_6.fits
+[20:38:25][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:25][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0062_CG22_6.fits
+[20:38:25][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0062_CG22_6.fits
+[20:38:26][I]: Setting cosmic ray rejection method to: dcr
+[20:38:26][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:26][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0063_CG22_6_comp.fits
+[20:38:26][I]: Saving FITS file to cfzst_0063_CG22_6_comp.fits
+[20:38:26][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:27][I]: Setting cosmic ray rejection method to: dcr
+[20:38:27][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:27][I]: Saving FITS file to fzst_0064_CG22_7.fits
+[20:38:27][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0064_CG22_7.fits
+[20:38:27][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:27][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0064_CG22_7.fits
+[20:38:27][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0064_CG22_7.fits
+[20:38:27][I]: Setting cosmic ray rejection method to: dcr
+[20:38:27][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:27][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0065_CG22_7_comp.fits
+[20:38:27][I]: Saving FITS file to cfzst_0065_CG22_7_comp.fits
+[20:38:28][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:28][I]: Setting cosmic ray rejection method to: dcr
+[20:38:28][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:28][I]: Saving FITS file to fzst_0066_CG22_8.fits
+[20:38:28][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0066_CG22_8.fits
+[20:38:28][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:28][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0066_CG22_8.fits
+[20:38:28][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0066_CG22_8.fits
+[20:38:29][I]: Setting cosmic ray rejection method to: dcr
+[20:38:29][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:29][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0067_CG22_8_comp.fits
+[20:38:29][I]: Saving FITS file to cfzst_0067_CG22_8_comp.fits
+[20:38:29][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:29][I]: Setting cosmic ray rejection method to: dcr
+[20:38:29][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:29][I]: Saving FITS file to fzst_0068_CG22_9.fits
+[20:38:29][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0068_CG22_9.fits
+[20:38:29][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:30][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0068_CG22_9.fits
+[20:38:30][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0068_CG22_9.fits
+[20:38:30][I]: Setting cosmic ray rejection method to: dcr
+[20:38:30][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:30][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0070_CG22_9_comp.fits
+[20:38:30][I]: Saving FITS file to cfzst_0070_CG22_9_comp.fits
+[20:38:31][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:31][I]: Setting cosmic ray rejection method to: dcr
+[20:38:31][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:31][I]: Saving FITS file to fzst_0057_CG22_10.fits
+[20:38:31][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0057_CG22_10.fits
+[20:38:31][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:31][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0057_CG22_10.fits
+[20:38:31][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0057_CG22_10.fits
+[20:38:31][I]: Setting cosmic ray rejection method to: dcr
+[20:38:31][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:31][I]: Saving FITS file to fzst_0058_CG22_10.fits
+[20:38:31][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0058_CG22_10.fits
+[20:38:31][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:32][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0058_CG22_10.fits
+[20:38:32][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0058_CG22_10.fits
+[20:38:32][I]: Setting cosmic ray rejection method to: dcr
+[20:38:32][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:32][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0059_CG22_10_comp.fits
+[20:38:32][I]: Saving FITS file to cfzst_0059_CG22_10_comp.fits
+[20:38:32][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:33][I]: Setting cosmic ray rejection method to: dcr
+[20:38:33][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:33][I]: Saving FITS file to fzst_0071_CG22_11.fits
+[20:38:33][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0071_CG22_11.fits
+[20:38:33][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:33][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0071_CG22_11.fits
+[20:38:33][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0071_CG22_11.fits
+[20:38:33][I]: Setting cosmic ray rejection method to: dcr
+[20:38:33][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:33][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0072_CG22_11_comp.fits
+[20:38:33][I]: Saving FITS file to cfzst_0072_CG22_11_comp.fits
+[20:38:34][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:34][I]: Setting cosmic ray rejection method to: dcr
+[20:38:34][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:34][I]: Saving FITS file to fzst_0073_CG22_12.fits
+[20:38:34][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0073_CG22_12.fits
+[20:38:34][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:34][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0073_CG22_12.fits
+[20:38:34][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0073_CG22_12.fits
+[20:38:35][I]: Setting cosmic ray rejection method to: dcr
+[20:38:35][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:35][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0074_CG22_12_comp.fits
+[20:38:35][I]: Saving FITS file to cfzst_0074_CG22_12_comp.fits
+[20:38:35][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:36][I]: Setting cosmic ray rejection method to: dcr
+[20:38:36][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:36][I]: Saving FITS file to fzst_0075_CG22_13.fits
+[20:38:36][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0075_CG22_13.fits
+[20:38:36][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:36][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0075_CG22_13.fits
+[20:38:36][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0075_CG22_13.fits
+[20:38:36][I]: Setting cosmic ray rejection method to: dcr
+[20:38:36][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:36][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0076_CG22_13_comp.fits
+[20:38:36][I]: Saving FITS file to cfzst_0076_CG22_13_comp.fits
+[20:38:37][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:37][I]: Setting cosmic ray rejection method to: dcr
+[20:38:37][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:37][I]: Saving FITS file to fzst_0091_CG22_14.fits
+[20:38:37][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0091_CG22_14.fits
+[20:38:37][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:37][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0091_CG22_14.fits
+[20:38:37][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0091_CG22_14.fits
+[20:38:38][I]: Setting cosmic ray rejection method to: dcr
+[20:38:38][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:38][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0092_CG22_14_comp.fits
+[20:38:38][I]: Saving FITS file to cfzst_0092_CG22_14_comp.fits
+[20:38:38][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:38][I]: Setting cosmic ray rejection method to: dcr
+[20:38:38][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:38][I]: Saving FITS file to fzst_0095_CG22_17.fits
+[20:38:38][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0095_CG22_17.fits
+[20:38:38][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:39][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0095_CG22_17.fits
+[20:38:39][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0095_CG22_17.fits
+[20:38:39][I]: Setting cosmic ray rejection method to: dcr
+[20:38:39][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:39][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0096_CG22_17_comp.fits
+[20:38:39][I]: Saving FITS file to cfzst_0096_CG22_17_comp.fits
+[20:38:39][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:40][I]: Setting cosmic ray rejection method to: dcr
+[20:38:40][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:40][I]: Saving FITS file to fzst_0097_CG22_18.fits
+[20:38:40][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0097_CG22_18.fits
+[20:38:40][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:40][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0097_CG22_18.fits
+[20:38:40][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0097_CG22_18.fits
+[20:38:40][I]: Setting cosmic ray rejection method to: dcr
+[20:38:40][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:40][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0098_CG22_18_comp.fits
+[20:38:40][I]: Saving FITS file to cfzst_0098_CG22_18_comp.fits
+[20:38:41][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:41][I]: Setting cosmic ray rejection method to: dcr
+[20:38:41][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:41][I]: Saving FITS file to fzst_0093_CG22_20.fits
+[20:38:41][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0093_CG22_20.fits
+[20:38:41][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:41][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0093_CG22_20.fits
+[20:38:41][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0093_CG22_20.fits
+[20:38:42][I]: Setting cosmic ray rejection method to: dcr
+[20:38:42][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:42][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0094_CG22_20_comp.fits
+[20:38:42][I]: Saving FITS file to cfzst_0094_CG22_20_comp.fits
+[20:38:42][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:42][I]: Setting cosmic ray rejection method to: dcr
+[20:38:42][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:42][I]: Saving FITS file to fzst_0099_CG22_21.fits
+[20:38:42][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0099_CG22_21.fits
+[20:38:42][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:43][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0099_CG22_21.fits
+[20:38:43][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0099_CG22_21.fits
+[20:38:43][I]: Setting cosmic ray rejection method to: dcr
+[20:38:43][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:43][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0100_CG22_21_comp.fits
+[20:38:43][I]: Saving FITS file to cfzst_0100_CG22_21_comp.fits
+[20:38:43][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:44][I]: Setting cosmic ray rejection method to: dcr
+[20:38:44][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:44][I]: Saving FITS file to fzst_0049_GJ83dot1.fits
+[20:38:44][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0049_GJ83dot1.fits
+[20:38:44][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:44][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0049_GJ83dot1.fits
+[20:38:44][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0049_GJ83dot1.fits
+[20:38:44][I]: Setting cosmic ray rejection method to: dcr
+[20:38:44][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:44][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0050_GJ83dot1_comp.fits
+[20:38:44][I]: Saving FITS file to cfzst_0050_GJ83dot1_comp.fits
+[20:38:45][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:45][I]: Setting cosmic ray rejection method to: dcr
+[20:38:45][W]: DCR does apply the correction to images if you want the mask use --keep-cosmic-files
+[20:38:45][I]: Saving FITS file to fzst_0047_HD217357.fits
+[20:38:45][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0047_HD217357.fits
+[20:38:45][I]: Removing cosmic rays using DCR by Wojtek Pych
+[20:38:46][W]: Removing input file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/fzst_0047_HD217357.fits
+[20:38:46][W]: Removing cosmic rays file: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cosmic_0047_HD217357.fits
+[20:38:46][I]: Saving FITS file to norm_master_flat_2100Custom_6500nm_GG495_0.45_dome.fits
+[20:38:46][I]: Setting cosmic ray rejection method to: dcr
+[20:38:46][I]: Changing cosmic ray rejection method from 'dcr' to 'none' for comparison lamp. Prefix 'c' will be added anyway.
+[20:38:46][I]: Saving image: /home/ubuntu/Dr.-Yep-2024-summer-research/Day3/RED/cfzst_0048_HD217357_comp.fits
+[20:38:46][I]: Saving FITS file to cfzst_0048_HD217357_comp.fits
