@@ -1,0 +1,68 @@
+[20:46:19][I]: Starting Goodman HTS Pipeline Log
+[20:46:19][I]: Local Time    : 2024-06-27 20:46:19.268177
+[20:46:19][I]: Universal Time: 2024-06-27 20:46:19.268293
+[20:46:19][I]: Pipeline Version: 1.3.7 (latest)
+[20:46:20][W]: The target's comparison lamps do not have reference lamps.
+[20:46:20][I]: Searching spectroscopic targets in file: cfzst_0073_CG30_7.fits
+[20:46:20][I]: Fitting Linear1D model to spatial profile to detect background shape
+[20:46:20][I]: Subtracting background shape and level spatial profile for better target identification
+[20:46:20][I]: Finding all peaks in spatial profile
+[20:46:20][I]: Selecting the 3 most intense peaks out of 4 found
+[20:46:20][I]: Validating peaks by setting threshold 3 times the background level 1.05
+[20:46:20][I]: Selecting peak: Centered: 173.0 Intensity 34.900
+[20:46:20][I]: Selecting peak: Centered: 81.0 Intensity 5.176
+[20:46:20][I]: Selecting peak: Centered: 165.0 Intensity 4.830
+[20:46:20][I]: Fitting 'Moffat1D' to spatial profile of targets.
+[20:46:20][I]: Recording target centered at: 172.71, FWHM: 3.88
+[20:46:21][E]: Discarding target centered at: 80.594
+[20:46:21][E]: Moffat model FWHM is too small: 0.10902116497811071. Set a minimum limit with `--profile-min-width`.
+[20:46:21][I]: Recording target centered at: 172.71, FWHM: 3.88
+[20:46:21][I]: Identified 2 targets
+[20:46:21][I]: Target tracing RMS error: 0.332
+[20:46:21][I]: Target tracing RMS error: 0.332
+[20:46:21][I]: Fractional Pixel Extraction for cfzst_0073_CG30_7.fits
+[20:46:21][I]: Extraction aperture in first column: 168.99:176.75
+[20:46:21][W]: Setting mask to None, otherwise saving will fail.
+[20:46:21][I]: Background extraction zone 1: 149.61:157.36 column 1
+[20:46:21][I]: Background extraction zone 2: 188.38:196.13 column 1
+[20:46:21][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0073_CG30_7_target_1.fits
+[20:46:21][I]: Saving FITS file to ecfzst_0073_CG30_7_target_1.fits
+[20:46:21][I]: Fractional Pixel Extraction for cfzst_0074_CG30_7_comp.fits
+[20:46:21][I]: Extraction aperture in first column: 168.99:176.75
+[20:46:21][W]: Setting mask to None, otherwise saving will fail.
+[20:46:21][I]: Background extraction zone 1: 'none'
+[20:46:21][I]: Background extraction zone 2: 'none'
+[20:46:21][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0074_CG30_7_comp_target_1_168.99-176.75.fits
+[20:46:21][I]: Saving FITS file to ecfzst_0074_CG30_7_comp_target_1_168.99-176.75.fits
+[20:46:21][I]: Fractional Pixel Extraction for cfzst_0072_CG30_7_comp.fits
+[20:46:21][I]: Extraction aperture in first column: 168.99:176.75
+[20:46:21][W]: Setting mask to None, otherwise saving will fail.
+[20:46:21][I]: Background extraction zone 1: 'none'
+[20:46:21][I]: Background extraction zone 2: 'none'
+[20:46:21][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0072_CG30_7_comp_target_1_168.99-176.75.fits
+[20:46:21][I]: Saving FITS file to ecfzst_0072_CG30_7_comp_target_1_168.99-176.75.fits
+[20:46:21][I]: Fractional Pixel Extraction for cfzst_0073_CG30_7.fits
+[20:46:21][I]: Extraction aperture in first column: 168.99:176.75
+[20:46:22][W]: Setting mask to None, otherwise saving will fail.
+[20:46:22][I]: Background extraction zone 1: 149.61:157.36 column 1
+[20:46:22][I]: Background extraction zone 2: 188.38:196.13 column 1
+[20:46:22][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0073_CG30_7_target_2.fits
+[20:46:22][I]: Saving FITS file to ecfzst_0073_CG30_7_target_2.fits
+[20:46:22][I]: Fractional Pixel Extraction for cfzst_0074_CG30_7_comp.fits
+[20:46:22][I]: Extraction aperture in first column: 168.99:176.75
+[20:46:22][W]: Setting mask to None, otherwise saving will fail.
+[20:46:22][I]: Background extraction zone 1: 'none'
+[20:46:22][I]: Background extraction zone 2: 'none'
+[20:46:22][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0074_CG30_7_comp_target_2_168.99-176.75.fits
+[20:46:22][I]: Saving FITS file to ecfzst_0074_CG30_7_comp_target_2_168.99-176.75.fits
+[20:46:22][I]: Fractional Pixel Extraction for cfzst_0072_CG30_7_comp.fits
+[20:46:22][I]: Extraction aperture in first column: 168.99:176.75
+[20:46:22][W]: Setting mask to None, otherwise saving will fail.
+[20:46:22][I]: Background extraction zone 1: 'none'
+[20:46:22][I]: Background extraction zone 2: 'none'
+[20:46:22][I]: Saving uncalibrated(w) extracted spectrum to file: ecfzst_0072_CG30_7_comp_target_2_168.99-176.75.fits
+[20:46:22][I]: Saving FITS file to ecfzst_0072_CG30_7_comp_target_2_168.99-176.75.fits
+[20:46:23][I]: Searching matching reference lamp
+[20:46:23][E]: Unable to find a match for: LAMP_HGA = FALSE, LAMP_NE = TRUE, LAMP_AR = FALSE, LAMP_FE = FALSE, LAMP_CU = FALSE, WAVMODE =  
+[20:46:23][I]: Searching matching reference lamp
+[20:46:23][E]: Unable to find a match for: LAMP_HGA = FALSE, LAMP_NE = TRUE, LAMP_AR = FALSE, LAMP_FE = FALSE, LAMP_CU = FALSE, WAVMODE =  
