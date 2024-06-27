@@ -175,7 +175,7 @@ def centralpixels(f,pltt='y'): #give flux from e-type comp file, toggle plots; c
         def gaus(x,a,mu,sigma):
             return a*exp(-(x-cp-mu)**2/(2*sigma**2))
 
-        popt,pcov = curve_fit(gaus,PE,FE)#,p0=[0.18,mean,sigma])  ## <--- leave out the first estimation of the parameters
+        popt,pcov = curve_fit(gaus,PE,FE,maxfev=2000)#,p0=[0.18,mean,sigma])  ## <--- leave out the first estimation of the parameters
 
         xx = np.linspace( cp-10, cp+10, 100 )  ## <--- calculate against a continuous variable
         pc=cp+popt[1] #central wavelength
@@ -344,8 +344,8 @@ wfun_check_path = os.path.join(source_folder, 'wfun_check')
 mkdir(wfun_path)
 mkdir(wfun_check_path)
 
-# starfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\ecfzst_0073_CG30_7.fits'
-# lampfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\ecfzst_0072_CG30_7_comp_163.35-177.86.fits'
+# starfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day3\RED\ecfzst_0062_CG22_6_target_1.fits'
+# lampfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day3\RED\ecfzst_0063_CG22_6_comp_target_1_174.40-180.14.fits'
 
 # process(starfile,lampfile)
 # print(starname)
@@ -353,16 +353,20 @@ mkdir(wfun_check_path)
 
 starfiles,lampfiles=scan_file(source_folder)
 write_io(source_folder+'\\wfun_check',f'scanning the directory{source_folder}'+'\r')
+print(source_folder)
 for i in range(len(starfiles)):
     write_io(source_folder+'\\wfun_check',f'{extract_target(extract_filename(starfiles[i]))}:{extract_target(extract_filename(lampfiles[i]))}'+'\r')
 
 
 
-
-for starfile,lampfile in zip(starfiles,lampfiles):
-    try:
-        process(starfile, lampfile)
-    except:
-        write_io(source_folder+'\\wfun_check',f'cannot process {identity}'+'\r')
-        print(f'cannot process {identity}')
+starfile=[extract_target(extract_filename(i)) for i in starfiles]
+lampfile=[extract_target(extract_filename(i)) for i in lampfiles]
+print(starfile)
+print(lampfile)
+# for starfile,lampfile in zip(starfiles,lampfiles):
+#     try:
+#         process(starfile, lampfile)
+#     except:
+#         write_io(source_folder+'\\wfun_check',f'cannot process {identity}'+'\r')
+#         print(f'cannot process {identity}')
 

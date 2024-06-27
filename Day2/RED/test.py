@@ -26,8 +26,14 @@ def extract_filename(file_path):
     return file_path[file_path.rfind('\\') + 1:]
 
 def extract_target(filename):
+    def find_(sign):
+        first_underscore_index = filename.find(sign)
+        if first_underscore_index != -1:
+            second_underscore_index = filename.find(sign, first_underscore_index + 1)
+            return second_underscore_index
+        return -1
     if filename.startswith('ecfzst') and filename.endswith('.fits'):
-        return filename[filename.find('_',2):-len('.fits')]
+        return filename[find_('_')+1:-len('.fits')]
 #wavelength, flux
 def wf(dat): #whichord,dat. Setup:   w,f=wf(#,dat)
     w=np.array([d[0] for d in dat])
@@ -41,12 +47,8 @@ def writefits(starfile):
     head=hdu[0].header
     hdu[0].data=[w,fstar] #wavelength, flux!
     hdu[0].header['COMPFILE']=extract_filename(lampfile) #record which comparison file was used
-    if 'target' in filename:
-        hdu.writeto(source_folder+'\\wfun\\wfun_'+starname+'_target.fits',overwrite=True)
-        hdu.close()
-    else:
-        hdu.writeto(source_folder+'\\wfun\\wfun_'+starname+'.fits',overwrite=True)
-        hdu.close()
+    hdu.writeto(source_folder+'\\wfun\\wfun_'+filename+'.fits',overwrite=True)
+    hdu.close()
 
 #Ultimate opendat:
 def opendatt(dir,filename,spl=''): #dir,'filename'. For opening a data file. Can then send through roundtable.
@@ -105,11 +107,12 @@ def efits(file):
 #Define pixel-center-finding function:
 #Operates on e..._comp.fits files.
 def centralpixels(f,pltt='y'): #give flux from e-type comp file, toggle plots; compare to lab Ne at end
-    maxx=[i for i in argrelextrema(f,np.greater)[0] if f[i]>10000]
-    write_io(source_folder+'\\wfun_check',f'opening file: {lampfile}'+'\r')
-    write_io(source_folder+'\\wfun_check',str(maxx)+'\r')
-    for m in maxx:
-        write_io(source_folder+'\\wfun_check',f'{m}:{f[m]}'+'\r')
+    filter=np.array([x for x in f if x>np.mean(f)])
+    maxx=[i for i in argrelextrema(f,np.greater)[0] if f[i]>np.mean(filter)]
+    # write_io(source_folder+'\\wfun_check',f'opening file: {lampfile}'+'\r')
+    # write_io(source_folder+'\\wfun_check',str(maxx)+'\r')
+    # for m in maxx:
+    #     write_io(source_folder+'\\wfun_check',f'{m}:{f[m]}'+'\r')
     
         
     #check you got them all:
@@ -188,12 +191,12 @@ def centralpixels(f,pltt='y'): #give flux from e-type comp file, toggle plots; c
             plt.legend()
             plt.savefig(source_folder+'\\wfun_check\\'+filename+'_'+'plot_'+str(i))
         
-        print('Pixel center of emission line:',pc)
+        # print('Pixel center of emission line:',pc)
         pcs.append(pc)
     
     #Check results against lab Ne
-    print('\nNeon lines needed:',len(wN))
-    print('emission lines found:',len(pcs))
+    # print('\nNeon lines needed:',len(wN))
+    # print('emission lines found:',len(pcs))
     if len(wN)-len(pcs)>0:
         print('!!! line(s) not found!')
     plt.figure()
@@ -341,27 +344,25 @@ wfun_check_path = os.path.join(source_folder, 'wfun_check')
 mkdir(wfun_path)
 mkdir(wfun_check_path)
 
-starfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\ecfzst_0060_CG30_6.fits'
-lampfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\ecfzst_0061_CG30_6_comp_167.23-176.39.fits'
-print(starfile)
-print(extract_filename(starfile))
-print(extract_target(extract_filename(starfile)))
+# starfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\ecfzst_0073_CG30_7.fits'
+# lampfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\ecfzst_0072_CG30_7_comp_163.35-177.86.fits'
+
 # process(starfile,lampfile)
 # print(starname)
 
 
-# starfiles,lampfiles=scan_file(source_folder)
-# write_io(source_folder+'\\wfun_check',f'scanning the directory{source_folder}'+'\r')
-# for i in range(len(starfiles)):
-#     write_io(source_folder+'\\wfun_check',f'{extract_target(extract_filename(starfiles[i]))}:{extract_target(extract_filename(lampfiles[i]))}'+'\r')
+starfiles,lampfiles=scan_file(source_folder)
+write_io(source_folder+'\\wfun_check',f'scanning the directory{source_folder}'+'\r')
+for i in range(len(starfiles)):
+    write_io(source_folder+'\\wfun_check',f'{extract_target(extract_filename(starfiles[i]))}:{extract_target(extract_filename(lampfiles[i]))}'+'\r')
 
 
 
 
-# for starfile,lampfile in zip(starfiles,lampfiles):
-#     try:
-#         process(starfile, lampfile)
-#     except:
-#         write_io(source_folder+'\\wfun_check',f'cannot process {identity}'+'\r')
-#         print(f'cannot process {identity}')
+for starfile,lampfile in zip(starfiles,lampfiles):
+    try:
+        process(starfile, lampfile)
+    except:
+        write_io(source_folder+'\\wfun_check',f'cannot process {identity}'+'\r')
+        print(f'cannot process {identity}')
 
