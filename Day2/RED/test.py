@@ -114,14 +114,9 @@ def header(file):
 
 #Define pixel-center-finding function:
 #Operates on e..._comp.fits files.
-def centralpixels(f,pltt='y',filename=filename,identity=identity): #give flux from e-type comp file, toggle plots; compare to lab Ne at end
+def centralpixels(f,pltt='n',filename=filename,identity=identity): #give flux from e-type comp file, toggle plots; compare to lab Ne at end
     filter=np.array([x for x in f if x>np.mean(f)])
     maxx=[i for i in argrelextrema(f,np.greater)[0] if f[i]>np.mean(filter)]
-    # write_io(source_folder+'\\wfun_check',f'opening file: {lampfile}'+'\r')
-    # write_io(source_folder+'\\wfun_check',str(maxx)+'\r')
-    # for m in maxx:
-    #     write_io(source_folder+'\\wfun_check',f'{m}:{f[m]}'+'\r')
-    
         
     #check you got them all:
     if pltt=='y':
@@ -183,7 +178,7 @@ def centralpixels(f,pltt='y',filename=filename,identity=identity): #give flux fr
         def gaus(x,a,mu,sigma):
             return a*exp(-(x-cp-mu)**2/(2*sigma**2))
 
-        popt,pcov = curve_fit(gaus,PE,FE,maxfev=2000)#,p0=[0.18,mean,sigma])  ## <--- leave out the first estimation of the parameters
+        popt,pcov = curve_fit(gaus,PE,FE,maxfev=2000, p0=[f[i],1,1])  ## <--- leave out the first estimation of the parameters
 
         xx = np.linspace( cp-10, cp+10, 100 )  ## <--- calculate against a continuous variable
         pc=cp+popt[1] #central wavelength
@@ -252,8 +247,8 @@ def more_target(f,f2,plttt='y'): #input e..._comp.fits comparison lamp file
     w=wfit(x)
     if plttt=='y':
         plt.figure()
-        plt.scatter(pc, wN,c='blue')
-        plt.scatter(pc2,wN,c='red')
+        plt.scatter(pc, wN,c='deepskyblue',alpha=0.3)
+        plt.scatter(pc2,wN,c='orange',alpha=0.3)
         plt.plot(x,w)
         plt.title('find the wavelength solution')
         plt.savefig(source_folder+'\\wfun_check\\'+filename+'_'+'linecheck')
@@ -413,19 +408,14 @@ wfun_check_path = os.path.join(source_folder, 'wfun_check')
 mkdir(wfun_path)
 mkdir(wfun_check_path)
 
-#starfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day3\RED\ecfzst_0062_CG22_6_target_1.fits'
-#lampfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day3\RED\ecfzst_0063_CG22_6_comp_target_1_174.40-180.14.fits'
+# starfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day1\RED\ecfzst_0111_CG22_5.fits'
+# lampfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day1\RED\ecfzst_0112_CG22_5_comp_179.52-193.56.fits'
 
 # process(starfile,lampfile)
 #print(header(lampfile)['Object'])
 
 
 starfiles,lampfiles=scan_file(source_folder)
-# write_io(source_folder+'\\wfun_check',f'scanning the directory{source_folder}'+'\r')
-# print(source_folder)
-# for i in range(len(starfiles)):
-#     write_io(source_folder+'\\wfun_check',f'{extract_target(extract_filename(starfiles[i]))}:{extract_target(extract_filename(lampfiles[i]))}'+'\r')
-
 
 import re
 def match(target,Given_string):
@@ -442,38 +432,15 @@ for starfile in starfiles:
 
     if len(matched_lamps) > 1:
         print('1')
-        #lamplist=[extract_filename(i) for i in matched_lamps]
         print(extract_filename(starfile)+':'+str(matched_lamps))
         process2(starfile,matched_lamps[0], matched_lamps[1])
-        # for idx, lamp in enumerate(matched_lamps):
-        #     comp_suffix = f"_C{idx + 1}"
-        #     new_star = star.replace('.fits','') + comp_suffix+'.fits'
-        #     matched_starlist.append(new_star)
-        #     shutil.copy(star,new_star)
-        #     lamp_with_suffix = lamp.replace("_comp", f"_comp{idx + 1}")
-        #     matched_lamplist.append(lamp_with_suffix)
-        #     os.rename(lamp, lamp_with_suffix)
+
     else:
         print(extract_filename(starfile)+':'+extract_filename(matched_lamps[0]))
         process(starfile, matched_lamps[0])
-        # matched_starlist.append(star)
-        # if matched_lamps:
-        #     matched_lamplist.append(matched_lamps[0])
 
 
 
-# for starfile,lampfile in zip(matched_starlist,matched_lamplist):
-#     try:
-#         print(extract_filename(starfile)+':'+extract_filename(lampfile))
-    # except:
-    #     print(f'cannot process')
 
 
-# for starfile,lampfile in zip(matched_starlist,matched_lamplist):
-#     # try:
-#         print(extract_filename(starfile)+':'+extract_filename(lampfile))
-#         process(starfile, lampfile)
-    # except:
-    #     write_io(source_folder+'\\wfun_check',f'cannot process {identity}'+'\r')
-    #     print(f'cannot process {identity}')
 
