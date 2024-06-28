@@ -1,5 +1,6 @@
 #Load packages and functions
-
+identity2 = ''
+filename2 = ''
 filename = ''
 identity = ''
 w = ''
@@ -113,7 +114,7 @@ def header(file):
 
 #Define pixel-center-finding function:
 #Operates on e..._comp.fits files.
-def centralpixels(f,pltt='y'): #give flux from e-type comp file, toggle plots; compare to lab Ne at end
+def centralpixels(f,pltt='y',filename=filename,identity=identity): #give flux from e-type comp file, toggle plots; compare to lab Ne at end
     filter=np.array([x for x in f if x>np.mean(f)])
     maxx=[i for i in argrelextrema(f,np.greater)[0] if f[i]>np.mean(filter)]
     # write_io(source_folder+'\\wfun_check',f'opening file: {lampfile}'+'\r')
@@ -130,7 +131,7 @@ def centralpixels(f,pltt='y'): #give flux from e-type comp file, toggle plots; c
         plt.title(f'{identity}_scan_checker')
         plt.xlabel('pixel')
         plt.ylabel('flux count')
-        plt.savefig(source_folder+'\\wfun_check\\'+filename+'_'+'scan')
+        plt.savefig(source_folder+'\\wfun_check\\'+filename+'_'+identity+'_'+'scan'+'.png')
     
     #Fit each maxx line peak out to 5000 flux counts:
     pcs=[] #pixel centers
@@ -196,7 +197,7 @@ def centralpixels(f,pltt='y'): #give flux from e-type comp file, toggle plots; c
             plt.xlabel('pixel')
             plt.ylabel('flux count')
             plt.legend()
-            plt.savefig(source_folder+'\\wfun_check\\'+filename+'_'+'plot_'+str(i))
+            plt.savefig(source_folder+'\\wfun_check\\'+filename+'_'+identity+'_'+'plot_'+str(i)+'.png')
         
         # print('Pixel center of emission line:',pc)
         pcs.append(pc)
@@ -211,7 +212,7 @@ def centralpixels(f,pltt='y'): #give flux from e-type comp file, toggle plots; c
     for p in pcs:
         plt.plot([p,p],[np.min(f),np.max(f)],c='darkorange',alpha=0.5)
         plt.title('compare to the lab neon')
-        plt.savefig(source_folder+'\\wfun_check\\'+filename+'_'+'check')
+        plt.savefig(source_folder+'\\wfun_check\\'+filename+'_'+identity+'_'+'check'+'.png')
 
     
     return pcs,len(maxx)
@@ -235,6 +236,28 @@ def wcal(f,plttt='y'): #input e..._comp.fits comparison lamp file
         plt.title('find the wavelength solution')
         plt.savefig(source_folder+'\\wfun_check\\'+filename+'_'+'linecheck')
     return w,count
+
+# Make list of calibrated wavelengths:
+def more_target(f,f2,plttt='y'): #input e..._comp.fits comparison lamp file
+    #find central pixel locations of lamp emission lines:
+    pc,count=centralpixels(f,pltt=plttt,filename=filename,identity=identity)
+    pc2,count2=centralpixels(f2,pltt=plttt,filename=filename2,identity=identity2)
+
+    # Take list of pixel centers and laboratory neon line wavelengths and map pixels to wavelengths.
+    wfitz,a,b,c,d=np.polyfit(pc+pc2,np.concatenate((wN, wN)),3,full=True)
+    print(a[0])
+
+    x=range(len(f))
+    wfit=np.poly1d(wfitz)
+    w=wfit(x)
+    if plttt=='y':
+        plt.figure()
+        plt.scatter(pc, wN,c='blue')
+        plt.scatter(pc2,wN,c='red')
+        plt.plot(x,w)
+        plt.title('find the wavelength solution')
+        plt.savefig(source_folder+'\\wfun_check\\'+filename+'_'+'linecheck')
+    return w,count+count2
 
 #look at results and see if Ha is in right place:
 def plotspec(w,fstar):
@@ -341,6 +364,45 @@ def process(starfile,lampfile):
     for i in delfile:
         os.remove(i)
 
+def process2(starfile,lampfile,lampfile2):
+    global filename,identity,w,count,fstar,image_paths,output_path,starname,identity2,filename2
+    #star
+    fstar,header=efits(starfile)
+    starname=header['Object']
+
+    #comparison lamp 1
+    flamp,head=efits(lampfile)
+    filename=extract_target(extract_filename(starfile))
+    identity=head['GSP_FNAM']
+
+     #comparison lamp 2
+    flamp2,head2=efits(lampfile2)
+    filename2=extract_target(extract_filename(starfile))
+    identity2=head2['GSP_FNAM']
+
+    #Draw the graph and save the picture
+
+    #Run wavelength calibration on comparison lamp file.
+    w,count=more_target(flamp,flamp2)
+
+    #writedat(source_folder+'\\wfun\\','wfun_'+starname,[w,fstar],['#w','f'])
+    writefits(starfile)
+    plotspec(w,fstar)
+
+    # Paths to the images to combine
+    image_paths = scan_picture(source_folder+'\\wfun_check', extension=".png")
+
+    # Path to the output image
+    output_path = source_folder+'\\wfun_check\\'+filename+'_'+identity+'.jpg'
+
+
+    # Combine images in a designed grid
+    combine_images_grid(image_paths, output_path, (count//4,6))
+
+    #delete the pictures
+    delfile=scan_picture(source_folder+'\\wfun_check', extension=".png")
+    for i in delfile:
+        os.remove(i)
 
 #get our currently working folder
 source_folder = os.getcwd()
@@ -371,28 +433,32 @@ def match(target,Given_string):
     matches = re.findall(pattern, Given_string)
     return matches
 
-matched_starlist = []
-matched_lamplist = []
-
-for star in starfiles:
-    for lamp in lampfiles:
-        if not 'target' in star:
-            matched_lamps = [extract_filename(lamp) for lamp in lampfiles if match(header(star)['Object'],extract_target(extract_filename(lamp)))]
+for starfile in starfiles:
+    for lampfile in lampfiles:
+        if not 'target' in starfile:
+            matched_lamps = [extract_filename(lamp) for lamp in lampfiles if match(header(starfile)['Object'],extract_target(extract_filename(lamp)))]
         else:
-            matched_lamps = [extract_filename(lamp) for lamp in lampfiles if extract_target(extract_filename(star)).replace('_target_', '_comp_target_') in extract_filename(lamp)]
+            matched_lamps = [extract_filename(lamp) for lamp in lampfiles if extract_target(extract_filename(starfile)).replace('_target_', '_comp_target_') in extract_filename(lamp)]
+
     if len(matched_lamps) > 1:
-        for idx, lamp in enumerate(matched_lamps):
-            comp_suffix = f"_C{idx + 1}"
-            new_star = star.replace('.fits','') + comp_suffix+'.fits'
-            matched_starlist.append(new_star)
-            shutil.copy(star,new_star)
-            lamp_with_suffix = lamp.replace("_comp", f"_comp{idx + 1}")
-            matched_lamplist.append(lamp_with_suffix)
-            os.rename(lamp, lamp_with_suffix)
+        print('1')
+        #lamplist=[extract_filename(i) for i in matched_lamps]
+        print(extract_filename(starfile)+':'+str(matched_lamps))
+        process2(starfile,matched_lamps[0], matched_lamps[1])
+        # for idx, lamp in enumerate(matched_lamps):
+        #     comp_suffix = f"_C{idx + 1}"
+        #     new_star = star.replace('.fits','') + comp_suffix+'.fits'
+        #     matched_starlist.append(new_star)
+        #     shutil.copy(star,new_star)
+        #     lamp_with_suffix = lamp.replace("_comp", f"_comp{idx + 1}")
+        #     matched_lamplist.append(lamp_with_suffix)
+        #     os.rename(lamp, lamp_with_suffix)
     else:
-        matched_starlist.append(star)
-        if matched_lamps:
-            matched_lamplist.append(matched_lamps[0])
+        print(extract_filename(starfile)+':'+extract_filename(matched_lamps[0]))
+        process(starfile, matched_lamps[0])
+        # matched_starlist.append(star)
+        # if matched_lamps:
+        #     matched_lamplist.append(matched_lamps[0])
 
 
 
@@ -403,10 +469,10 @@ for star in starfiles:
     #     print(f'cannot process')
 
 
-for starfile,lampfile in zip(matched_starlist,matched_lamplist):
-    # try:
-        print(extract_filename(starfile)+':'+extract_filename(lampfile))
-        process(starfile, lampfile)
+# for starfile,lampfile in zip(matched_starlist,matched_lamplist):
+#     # try:
+#         print(extract_filename(starfile)+':'+extract_filename(lampfile))
+#         process(starfile, lampfile)
     # except:
     #     write_io(source_folder+'\\wfun_check',f'cannot process {identity}'+'\r')
     #     print(f'cannot process {identity}')
