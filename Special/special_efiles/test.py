@@ -252,8 +252,8 @@ def more_target(f,f2,plttt='y'): #input e..._comp.fits comparison lamp file
     w=wfit(x)
     if plttt=='y':
         plt.figure()
-        plt.scatter(pc, wN,c='blue')
-        plt.scatter(pc2,wN,c='red')
+        plt.scatter(pc, wN,c='deepskyblue',alpha=0.3)
+        plt.scatter(pc2,wN,c='orange',alpha=0.3)
         plt.plot(x,w)
         plt.title('find the wavelength solution')
         plt.savefig(source_folder+'\\wfun_check\\'+filename+'_'+'linecheck')
