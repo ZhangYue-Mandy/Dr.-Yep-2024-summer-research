@@ -11,8 +11,8 @@ def plot_cluster(file_path, sheet_name, cluster):
     df.dropna(how='all', inplace=True)
 
     # 将第一行非空白数据作为标题
-    df.columns = df.iloc[0]
-    df = df[1:]
+    df.columns = df.iloc[1]
+    df = df[2:]
 
     # 重置索引
     df.reset_index(drop=True, inplace=True)
