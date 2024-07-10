@@ -212,8 +212,8 @@ def norm(w,f,pltt='y',blaze='n',deg=3): #did 3, bad at edges, trying 4
 
     if pltt=='y':
         plt.figure(figsize=(12,5))
-        plt.plot(w,f)
-        plt.plot(wcc,fcc)
+        plt.plot(w,f,alpha=0.3)
+        plt.plot(wcc,fcc,alpha=0.5)
         plt.title('Regular Norm Cuts')
 
     ffitz,a,b,c,d=np.polyfit(wcc,fcc,deg,full=True)
@@ -224,7 +224,7 @@ def norm(w,f,pltt='y',blaze='n',deg=3): #did 3, bad at edges, trying 4
     fn=f/ffit(w)
     
     if pltt=='y':
-        plt.plot(x,ffit(x))
+        plt.plot(x,ffit(x),color='green')
         med=np.median(f)
         minn=med-0.1*(med-np.min(f))
         maxx=med+0.1*(np.max(f)-med)
@@ -240,7 +240,7 @@ def norm(w,f,pltt='y',blaze='n',deg=3): #did 3, bad at edges, trying 4
         guess=6506
         plt.plot([guess,guess],[minn,maxx],c='lime',lw=1)
         plt.ylim(favg*0.5,favg*2)
-        plt.savefig(source_folder+'\\norm_check\\'+starname+'normalized'+'.png')
+        plt.savefig(source_folder+'\\norm_check\\'+starname+'0'+'.png')
         #plt.savefig(source_folder+'\\norm\\'+starname+'_normalized'+'.png')
 
         plt.figure(figsize=(12,5))
@@ -250,7 +250,7 @@ def norm(w,f,pltt='y',blaze='n',deg=3): #did 3, bad at edges, trying 4
         plt.ylim(0.5,1.6)
         plt.plot([w[0],w[-1]],[1,1],color='gray')
         plt.title('Regular Norm Flux vs. Wavelength')
-        plt.savefig(source_folder+'\\norm_check\\'+starname+'.png')
+        plt.savefig(source_folder+'\\norm_check\\'+starname+'2'+'.png')
     if blaze=='y':
         return fn,ffit(w)
     else:
@@ -313,9 +313,10 @@ def normM(w,f,pltt='y',blaze='n',deg=5): #M does better with deg = 5
     fn=f/ffit(w)
     if pltt=='y':
         plt.figure(figsize=(12,5))
-        plt.plot(w,f)
+        plt.plot(w,f,alpha=0.3)
         plt.plot(x,ffit(x),color='green')
-        plt.plot(wcc,fcc)
+        plt.plot(wcc,fcc,alpha=0.5)
+        plt.ylim(favg*0.5,favg*2)
         checkcut(mskip,f)
         plt.title('M-Star NormM Cuts')
         plt.savefig(source_folder+'\\norm_check_M\\'+starname+'.png')
@@ -398,19 +399,20 @@ def normM_e(w,f,pltt='y',blaze='n',deg=5): #M does better with deg = 5
     fn=f/ffit(w)
     if pltt=='y':
         plt.figure(figsize=(12,5))
-        plt.plot(w,f)
-        plt.plot(wcc,fcc)
+        plt.plot(w,f,alpha=0.3)
+        plt.plot(wcc,fcc,alpha=0.5)
         checkcut(mskip,f)
+        plt.ylim(favg*0.5,favg*2)
         plt.title('M-Star NormM Cuts')
         plt.savefig(source_folder+'\\norm_check_M\\'+starname+'.png')
 
 
     if pltt=='y':
-        plt.plot(x,ffit(x))
         plt.ylim(favg*0.5,favg*2)
 
         plt.figure(figsize=(12,5))
         plt.plot(w,fn)
+        plt.plot(x,ffit(x),color='green')
         plt.xlabel('Wavelength (A)')
         plt.ylabel('Normalized Flux')
         plt.ylim(0.5,1.6)
@@ -567,6 +569,7 @@ def processM(file):
         fn=normM(w,f)
         
     except:
+        print('using e version')
         fn=normM_e(w,f)
 
 
@@ -601,13 +604,12 @@ mkdir(norm_path)
 mkdir(norm_check_path)
 
 
-norm_path = os.path.join(source_folder, 'norm_M')
+
 norm_check_path = os.path.join(source_folder, 'norm_check_M')
-mkdir(norm_path)
 mkdir(norm_check_path)
 
-# file=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day3\RED\wfun\wfun_CG22_20.fits'
-# process(file)
+# file=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Special\special_efiles\wfun\wfun_CG30_9_target_2.fits'
+# #process(file)
 # processM(file)
 
 #file=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\wfun\wfun_CG4_2.fits'

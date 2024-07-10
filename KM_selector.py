@@ -59,7 +59,7 @@ def delete(dir_path):
         shutil.rmtree(source_folder+'\\norm_check_M')
 
 # 使用示例
-day='Day1'
+day='Day3'
 file_path = r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Goodman_Observing_Log.xlsx'
 sheet_name = 'selection'
 

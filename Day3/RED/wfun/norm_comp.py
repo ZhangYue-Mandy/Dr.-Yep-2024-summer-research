@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
-
+import shutil
 import os
 
 import numpy as np
@@ -57,3 +57,12 @@ for i in scan_picture(source_folder, extension=".jpg"):
 
     # Combine images in a designed grid
     combine_images_grid(image_paths, output_path, [2,1])
+
+# Define the directory path to be deleted
+dir_path = 'path/to/directory'
+
+# Ensure the directory exists before attempting to delete
+if os.path.exists(source_folder+'\\norm_check_M'):
+    shutil.rmtree(source_folder+'\\norm_check_M')
+if os.path.exists(source_folder+'\\norm_check'):
+    shutil.rmtree(source_folder+'\\norm_check')
