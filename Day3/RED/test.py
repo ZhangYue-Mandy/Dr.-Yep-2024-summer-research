@@ -408,36 +408,36 @@ wfun_check_path = os.path.join(source_folder, 'wfun_check')
 mkdir(wfun_path)
 mkdir(wfun_check_path)
 
-# starfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day1\RED\ecfzst_0111_CG22_5.fits'
-# lampfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day1\RED\ecfzst_0112_CG22_5_comp_179.52-193.56.fits'
+starfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day3\RED\ecfzst_0047_HD217357.fits'
+lampfile=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day3\RED\ecfzst_0047_HD217357_comp.fits'
 
-# process(starfile,lampfile)
-#print(header(lampfile)['Object'])
+process(starfile,lampfile)
 
 
-starfiles,lampfiles=scan_file(source_folder)
 
-import re
-def match(target,Given_string):
-    pattern = r'.*?' + re.escape(target) + '_'
-    matches = re.findall(pattern, Given_string)
-    return matches
+# starfiles,lampfiles=scan_file(source_folder)
 
-for starfile in starfiles:
-    for lampfile in lampfiles:
-        if not 'target' in starfile:
-            matched_lamps = [extract_filename(lamp) for lamp in lampfiles if match(header(starfile)['Object'],extract_target(extract_filename(lamp)))]
-        else:
-            matched_lamps = [extract_filename(lamp) for lamp in lampfiles if extract_target(extract_filename(starfile)).replace('_target_', '_comp_target_') in extract_filename(lamp)]
+# import re
+# def match(target,Given_string):
+#     pattern = r'.*?' + re.escape(target) + '_'
+#     matches = re.findall(pattern, Given_string)
+#     return matches
 
-    if len(matched_lamps) > 1:
-        print('1')
-        print(extract_filename(starfile)+':'+str(matched_lamps))
-        process2(starfile,matched_lamps[0], matched_lamps[1])
+# for starfile in starfiles:
+#     for lampfile in lampfiles:
+#         if not 'target' in starfile:
+#             matched_lamps = [extract_filename(lamp) for lamp in lampfiles if match(header(starfile)['Object'],extract_target(extract_filename(lamp)))]
+#         else:
+#             matched_lamps = [extract_filename(lamp) for lamp in lampfiles if extract_target(extract_filename(starfile)).replace('_target_', '_comp_target_') in extract_filename(lamp)]
 
-    else:
-        print(extract_filename(starfile)+':'+extract_filename(matched_lamps[0]))
-        process(starfile, matched_lamps[0])
+#     if len(matched_lamps) > 1:
+#         print('1')
+#         print(extract_filename(starfile)+':'+str(matched_lamps))
+#         process2(starfile,matched_lamps[0], matched_lamps[1])
+
+#     else:
+#         print(extract_filename(starfile)+':'+extract_filename(matched_lamps[0]))
+#         process(starfile, matched_lamps[0])
 
 
 
