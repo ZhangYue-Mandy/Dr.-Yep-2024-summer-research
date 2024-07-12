@@ -117,14 +117,12 @@ def writefitsM(starfile):
     # Convert w and fn to numpy arrays
     w_array = np.array(w)
     fn_array = np.array(fn)
-    
     if len(fn_array) == 0:
         print("Warning: 'fn' array is empty.")
         combined_data = w_array
     else:
         # Combine w and fn into a 2D array if they are not empty
-        combined_data = np.vstack((w_array, fn_array)).T  # Transpose to get the correct shape
-
+        combined_data = np.vstack((w_array, fn_array)) # Transpose to get the correct shape
     hdu[0].data = combined_data
     hdu.writeto(source_folder + '\\norm\\norm_M_' + extract_filename(starfile), overwrite=True)
     hdu.close()
@@ -258,6 +256,7 @@ def norm(w,f,pltt='y',blaze='n',deg=3): #did 3, bad at edges, trying 4
 
 #operate on unnorm w,f. Return w, normalized f. For M-stars, dodging molecular bands.
 def normM(w,f,pltt='y',blaze='n',deg=5): #M does better with deg = 5
+    global fn
     #roughly skip the dips
     #dodge broad Ha:
     favg=np.median(f) #Try median, hopefully not ALL peak
@@ -608,9 +607,9 @@ mkdir(norm_check_path)
 norm_check_path = os.path.join(source_folder, 'norm_check_M')
 mkdir(norm_check_path)
 
-# file=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Special\special_efiles\wfun\wfun_CG30_9_target_2.fits'
-# #process(file)
-# processM(file)
+file=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day1\RED\wfun\wfun_HD32450.fits'
+process(file)
+processM(file)
 
 #file=r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Day2\RED\wfun\wfun_CG4_2.fits'
 # w,f=openfits(file)
@@ -639,6 +638,6 @@ mkdir(norm_check_path)
 # combine_images_grid(image_paths, output_path, [2,1])
 # delfile=scan_picture(source_folder+'\\norm_check', extension=".png")
 
-for file in filelist:
-    process(file)
-    processM(file)
+# for file in filelist:
+#     process(file)
+#     processM(file)

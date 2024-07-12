@@ -38,28 +38,33 @@ def plot_cluster(file_path, sheet_name,day):
     name_option_dict = dict(zip(df['name'], df['option']))
     return name_option_dict
 
-#copy file to another folder based on the name
-def cp_file(name,option):
-    if option == 'K':
-        name = 'norm_wfun_'+name+'.fits'
-        source_file = os.path.join(source_folder, name)
-        shutil.copy(source_file, target_folder)
-    elif option == 'M':
-        name = 'norm_M_wfun_'+name+'.fits'
-        source_file = os.path.join(source_folder, name)
-        shutil.copy(source_file, target_folder)
+# Copy file to another folder based on the name
+def cp_file(name, option):
     print(name)
+    if option == 'K':
+        file_name = f'norm_wfun_{name}.fits'
+    elif option == 'M':
+        file_name = f'norm_M_wfun_{name}.fits'
+    else:
+        print(f"Unknown option for {name}")
+        return
 
-def delete(dir_path):
+    source_file = os.path.join(source_folder, file_name)
+    if os.path.exists(source_file):
+        shutil.copy(source_file, target_folder)
+        print(f"Copied: {file_name}")
+    else:
+        print(f"File not found: {file_name}")
+
+def delete(target_folder):
     # Define the directory path to be deleted
-    dir_path = 'path/to/directory'
 
     # Ensure the directory exists before attempting to delete
-    if os.path.exists(source_folder+'\\norm_check_M'):
-        shutil.rmtree(source_folder+'\\norm_check_M')
+    if os.path.exists(target_folder):
+        shutil.rmtree(target_folder)
 
 # 使用示例
-day='Day3'
+day='Day1'
 file_path = r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Goodman_Observing_Log.xlsx'
 sheet_name = 'selection'
 
@@ -74,5 +79,8 @@ delete(target_folder)
 mkdir(target_folder)
 dic=plot_cluster(file_path, sheet_name, day)
 print(dic)
+# name='HD32450'
+# option='M'
+# cp_file(name,option)
 for name,option in plot_cluster(file_path, sheet_name, day).items():
     cp_file(name,option)
