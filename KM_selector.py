@@ -17,13 +17,13 @@ def mkdir(path):
 def plot_cluster(file_path, sheet_name,day):
     # 读取Excel文件中特定的工作表
     if day=='Day1':
-        df = pd.read_excel(file_path, sheet_name=sheet_name, usecols="B,C", skiprows=1, skipfooter=1)
+        df = pd.read_excel(file_path, sheet_name=sheet_name, usecols="B,C", skiprows=1, skipfooter=0)
     elif day=='Day2':
-        df = pd.read_excel(file_path, sheet_name=sheet_name, usecols="E,F", skiprows=1, skipfooter=1)
+        df = pd.read_excel(file_path, sheet_name=sheet_name, usecols="E,F", skiprows=1, skipfooter=0)
     elif day=='Day3':
-        df = pd.read_excel(file_path, sheet_name=sheet_name, usecols="H,I", skiprows=1, skipfooter=1)
+        df = pd.read_excel(file_path, sheet_name=sheet_name, usecols="H,I", skiprows=1, skipfooter=0)
     elif day=='Special':
-        df = pd.read_excel(file_path, sheet_name=sheet_name, usecols="K,L", skiprows=1, skipfooter=1)
+        df = pd.read_excel(file_path, sheet_name=sheet_name, usecols="K,L", skiprows=1, skipfooter=0)
 
     # 删除空白行
     df.dropna(how='all', inplace=True)
@@ -64,7 +64,8 @@ def delete(target_folder):
         shutil.rmtree(target_folder)
 
 # 使用示例
-day='Day1'
+#day='Day3'
+day='Special'
 file_path = r'C:\Users\ZY\Documents\github\233boy\Dr.-Yep-2024-summer-research\Goodman_Observing_Log.xlsx'
 sheet_name = 'selection'
 
